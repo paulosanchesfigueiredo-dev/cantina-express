@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantina Express</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🍔 Cantina Express</h1>
+        <p>Seu lanche sem fila!</p>
+    </header>
+
+    <main>
+        <label for="nome">Seu nome:</label>
+        <input id="nome" type="text" placeholder="Digite seu nome">
+
+        <h2>Cardápio</h2>
+
+        <!-- Desafio: categorias no cardápio -->
+        <div class="categorias">
+            <button class="categoria ativa" onclick="filtrarCategoria('todos', this)">Todos</button>
+            <button class="categoria" onclick="filtrarCategoria('lanches', this)">Lanches</button>
+            <button class="categoria" onclick="filtrarCategoria('bebidas', this)">Bebidas</button>
+            <button class="categoria" onclick="filtrarCategoria('doces', this)">Doces</button>
+        </div>
+
+        <!-- Desafio: novos produtos -->
+        <section class="produtos">
+            <article class="produto" data-categoria="lanches">
+                <h3>🥪 Sanduíche</h3>
+                <p>R$ 8,00</p>
+                <button onclick="adicionar('Sanduíche', 8)">Adicionar</button>
+            </article>
+
+            <article class="produto" data-categoria="lanches">
+                <h3>🍕 Pizza</h3>
+                <p>R$ 7,00</p>
+                <button onclick="adicionar('Pizza', 7)">Adicionar</button>
+            </article>
+
+            <article class="produto" data-categoria="lanches">
+                <h3>🍗 Coxinha</h3>
+                <p>R$ 6,00</p>
+                <button onclick="adicionar('Coxinha', 6)">Adicionar</button>
+            </article>
+
+            <article class="produto" data-categoria="lanches">
+                <h3>🧀 Pão de queijo</h3>
+                <p>R$ 4,00</p>
+                <button onclick="adicionar('Pão de queijo', 4)">Adicionar</button>
+            </article>
+
+            <article class="produto" data-categoria="bebidas">
+                <h3>🧃 Suco</h3>
+                <p>R$ 5,00</p>
+                <button onclick="adicionar('Suco', 5)">Adicionar</button>
+            </article>
+
+            <article class="produto" data-categoria="bebidas">
+                <h3>🥤 Refrigerante</h3>
+                <p>R$ 6,00</p>
+                <button onclick="adicionar('Refrigerante', 6)">Adicionar</button>
+            </article>
+
+            <article class="produto" data-categoria="bebidas">
+                <h3>💧 Água</h3>
+                <p>R$ 3,00</p>
+                <button onclick="adicionar('Água', 3)">Adicionar</button>
+            </article>
+
+            <article class="produto" data-categoria="doces">
+                <h3>🍰 Bolo de pote</h3>
+                <p>R$ 7,50</p>
+                <button onclick="adicionar('Bolo de pote', 7.5)">Adicionar</button>
+            </article>
+
+            <article class="produto" data-categoria="doces">
+                <h3>🍫 Brigadeiro</h3>
+                <p>R$ 2,50</p>
+                <button onclick="adicionar('Brigadeiro', 2.5)">Adicionar</button>
+            </article>
+        </section>
+
+        <h2>Meu pedido</h2>
+        <section class="pedido">
+            <ul id="lista"></ul>
+            <h3 id="total">Total: R$ 0,00</h3>
+            <button class="confirmar" onclick="finalizarPedido()">
+                Confirmar pedido
+            </button>
+        </section>
+
+        <h2>Pedidos realizados</h2>
+        <p class="dica">Toque em um pedido para ver os detalhes.</p>
+        <section id="historico"></section>
+    </main>
+
+    <!-- Desafio: tela de detalhes do pedido -->
+    <div id="detalhes" class="tela-detalhes" hidden>
+        <div class="caixa-detalhes">
+            <h2>Detalhes do pedido</h2>
+            <div id="conteudoDetalhes"></div>
+            <button onclick="fecharDetalhes()">Voltar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

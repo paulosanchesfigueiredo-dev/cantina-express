@@ -1,0 +1,196 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+header {
+    background: #075985;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    margin: 0 0 6px;
+}
+
+header p {
+    margin: 0;
+    opacity: 0.85;
+}
+
+main {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 18px;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    margin-top: 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+h2 {
+    margin-top: 28px;
+}
+
+.produto, .pedido {
+    background: white;
+    padding: 18px;
+    margin: 12px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #00000010;
+}
+
+.produto h3 {
+    margin: 0 0 4px;
+}
+
+.produto p {
+    margin: 0;
+    color: #0369a1;
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #0284c7;
+    color: white;
+    font-weight: bold;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.confirmar {
+    background: #15803d;
+}
+
+/* Desafio: categorias */
+.categorias {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+}
+
+.categoria {
+    width: auto;
+    flex: 1;
+    padding: 9px 12px;
+    background: #e2e8f0;
+    color: #334155;
+    margin-top: 0;
+}
+
+.categoria.ativa {
+    background: #075985;
+    color: white;
+}
+
+/* Desafio: quantidade e remover */
+#lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#lista li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.item-nome {
+    flex: 1;
+}
+
+.controles {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.controles button {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    margin: 0;
+}
+
+.btn-remover {
+    background: #dc2626;
+}
+
+.vazio {
+    color: #64748b;
+}
+
+/* Histórico */
+.dica {
+    color: #64748b;
+    font-size: 14px;
+    margin-top: -8px;
+}
+
+.pedido-card {
+    cursor: pointer;
+}
+
+/* Desafio: tela de detalhes */
+.tela-detalhes {
+    position: fixed;
+    inset: 0;
+    background: #0f172acc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+}
+
+.tela-detalhes[hidden] {
+    display: none;
+}
+
+.caixa-detalhes {
+    background: white;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.caixa-detalhes h2 {
+    margin-top: 0;
+}
+
+.caixa-detalhes ul {
+    padding-left: 18px;
+}
+
+@media (min-width: 550px) {
+    .produtos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .produtos .produto {
+        margin: 0;
+    }
+}
